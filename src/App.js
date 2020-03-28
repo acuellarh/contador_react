@@ -14,7 +14,8 @@ class App extends Component {
       <div className="App-container">       
         <input type="text" value={this.state.name} onChange={this.updateName.bind(this)}/>
         <div className="">       
-          <input type="text" value={this.state.name.length} onChange={this.updateName.bind(this)}/>                        
+          <input type="text" value={this.state.name.length} onChange={this.updateName.bind(this)}/>  
+         
         </div>        
       </div>
     );
