@@ -5,25 +5,22 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      name: ""     
+      count: "",  
     }
   }
 
   render() {
     return (
-      <div className="App-container">       
-        <input type="text" value={this.state.name} onChange={this.updateName.bind(this)}/>
-        <div className="">       
-          <input type="text" value={this.state.name.length} onChange={this.updateName.bind(this)}/>  
-         
-        </div>        
+      <div className="container">  
+        <textarea className={this.state.count > 79 ? "textarea-error" : ""} rows="3" cols="40" onChange={this.updateCount.bind(this)}></textarea> 
+        <div className={this.state.count > 79 ? "counter-error" : "counter"}>{this.state.count}</div>      
       </div>
     );
   }
 
-  updateName(event){
+  updateCount(event){
     this.setState({
-      name: event.target.value
+      count: event.target.value.length
     });
   }
 
